@@ -14,7 +14,7 @@ public class Main {
 }
 
 class First {
-    synchronized void display(String msg) {
+    synchronized void display(String msg) { // Only one thread can execute at a time.
         System.out.print(" [ " + msg);
         try {
             Thread.sleep(1500);
@@ -39,3 +39,11 @@ class Second extends Thread {
     }
 
 }
+
+/*
+synchronized(fobj) { this synchronization is implemented in Java with a concept called monitors
+    fobj.display(msg)
+}
+
+without key word 'synchronized' in display method
+ */
